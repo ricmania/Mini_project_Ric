@@ -1,0 +1,500 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #d1fae5;
+  background: linear-gradient(135deg, #000000, #052e16);
+  /* 🎨 Background doodle */
+  background-image: url("https://www.shutterstock.com/shutterstock/photos/1724904730/display_1500/stock-vector-vector-illustration-of-doodle-cute-for-kid-hand-drawn-set-of-cute-doodles-for-decoration-on-white-1724904730.jpg"),
+    linear-gradient(135deg, #000000, #052e16);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply, normal;
+  background-attachment: fixed;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  border-radius: 16px;
+  background: rgb(11 15 12 / 0.92);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 0.6);
+  border: 1px solid #14532d;
+  backdrop-filter: blur(4px);
+}
+
+.host {
+  margin: 0;
+  color: #22c55e;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 14px;
+}
+
+/* ⏰ Jam live */
+.live-clock {
+  margin: 8px 0 0;
+  color: #86efac;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  margin: 16px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nav-link {
+  color: #22c55e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* 👤 Info pengguna & logout */
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  background: #000000;
+  font-size: 14px;
+  color: #86efac;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #4ade80;
+}
+
+.logout-btn {
+  margin-left: auto;
+  background: transparent;
+  color: #22c55e;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.logout-btn:hover {
+  background: #052e16;
+}
+
+h1 {
+  margin: 8px 0 20px;
+  font-size: 24px;
+  color: #4ade80;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  font: inherit;
+  background: #000000;
+  color: #4ade80;
+}
+
+.form input::placeholder {
+  color: #166534;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgb(34 197 94 / 0.2);
+}
+
+/* 📅 Menu tanggal deadline */
+.deadline-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  background: #000000;
+}
+
+.deadline-label {
+  color: #86efac;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.deadline-field input[type="date"] {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #14532d;
+  border-radius: 6px;
+  font: inherit;
+  background: #052e16;
+  color: #4ade80;
+  color-scheme: dark;
+}
+
+.deadline-field input[type="date"]:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgb(34 197 94 / 0.2);
+}
+
+button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #16a34a;
+  color: #022c22;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #22c55e;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  background: rgb(0 0 0 / 0.8);
+}
+
+.list li.done .text {
+  text-decoration: line-through;
+  color: #166534;
+}
+
+.list input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #22c55e;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.todo-content,
+.history-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.text {
+  word-break: break-word;
+  color: #4ade80;
+}
+
+.date {
+  font-size: 12px;
+  color: #22c55e;
+  font-family: ui-monospace, Menlo, monospace;
+}
+
+/* Tenggat waktu */
+.deadline {
+  font-size: 12px;
+  color: #22c55e;
+  font-family: ui-monospace, Menlo, monospace;
+}
+
+.deadline.soon {
+  color: #fbbf24;
+}
+
+.deadline.today {
+  color: #f59e0b;
+}
+
+.deadline.overdue {
+  color: #ef4444;
+}
+
+.delete {
+  background: transparent;
+  color: #4ade80;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.delete:hover {
+  background: #052e16;
+  color: #86efac;
+}
+
+.empty {
+  color: #166534;
+  text-align: center;
+  margin: 8px 0 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #14532d;
+  font-size: 14px;
+  color: #22c55e;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  background: transparent;
+  color: #22c55e;
+  padding: 4px 8px;
+}
+
+.link:hover {
+  background: #052e16;
+}
+
+.history-link {
+  text-decoration: none;
+}
+
+.history-link:hover {
+  text-decoration: underline;
+}
+
+.backup {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #14532d;
+}
+
+.backup h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #4ade80;
+}
+
+.backup-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.backup-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.backup-btn.secondary {
+  background: #000000;
+  color: #4ade80;
+  border: 1px solid #14532d;
+}
+
+.backup-btn.secondary:hover {
+  background: #052e16;
+}
+
+.backup-hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: #166534;
+  line-height: 1.5;
+}
+
+/* ===== Form autentikasi (login & daftar) ===== */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.auth-label {
+  font-size: 13px;
+  color: #86efac;
+  margin-top: 6px;
+}
+
+.auth-form input {
+  padding: 10px 14px;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  font: inherit;
+  background: #000000;
+  color: #4ade80;
+}
+
+.auth-form input::placeholder {
+  color: #166534;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgb(34 197 94 / 0.2);
+}
+
+.auth-submit {
+  margin-top: 16px;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.auth-error {
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border: 1px solid #7f1d1d;
+  border-radius: 8px;
+  background: rgb(69 10 10 / 0.6);
+  color: #fca5a5;
+  font-size: 14px;
+}
+
+.auth-switch {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #86efac;
+  font-size: 14px;
+}
+
+.auth-switch .link {
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* ===== Modal konfirmasi (in-page popup) ===== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 0.7);
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  width: 100%;
+  max-width: 380px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #0b0f0c;
+  border: 1px solid #14532d;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 0.6);
+  text-align: center;
+  animation: popIn 0.18s ease-out;
+}
+
+.modal-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.modal h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: #4ade80;
+}
+
+.modal p {
+  margin: 0 0 20px;
+  color: #86efac;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.modal-btn.cancel {
+  background: #052e16;
+  color: #4ade80;
+  border: 1px solid #14532d;
+}
+
+.modal-btn.cancel:hover {
+  background: #14532d;
+}
+
+.modal-btn.danger {
+  background: #16a34a;
+  color: #022c22;
+  font-weight: 600;
+}
+
+.modal-btn.danger:hover {
+  background: #22c55e;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
