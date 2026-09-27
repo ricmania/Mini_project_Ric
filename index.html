@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tododay — To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <p class="host">tododay.rakit.icu</p>
+    <p id="live-clock" class="live-clock"></p>
+
+    <div class="user-bar">
+      <span>👤 <span id="user-name" class="user-name">Pengguna</span></span>
+      <button id="logout" type="button" class="logout-btn">Keluar</button>
+    </div>
+
+    <h1>📝 To-Do List</h1>
+
+    <div id="task-error" class="auth-error" hidden></div>
+
+    <form id="form" class="form">
+      <input id="input" type="text" placeholder="Tulis tugas baru..." autocomplete="off" />
+      <button type="submit">Tambah</button>
+    </form>
+
+    <label class="deadline-field" for="deadline">
+      <span class="deadline-label">📅 Dikumpulkan tanggal:</span>
+      <input id="deadline" type="date" />
+    </label>
+
+    <ul id="list" class="list"></ul>
+
+    <p id="empty" class="empty">Belum ada tugas. Tambahkan yang pertama! ✨</p>
+
+    <footer class="footer">
+      <span id="remaining">0 tugas tersisa</span>
+      <div class="footer-actions">
+        <a href="history.html" class="link history-link">Riwayat</a>
+        <button id="clear" type="button" class="link">Hapus selesai</button>
+      </div>
+    </footer>
+
+    <div class="backup">
+      <h2>💾 Cadangan Data</h2>
+      <div class="backup-actions">
+        <button id="export" type="button" class="backup-btn">Unduh Backup</button>
+        <button id="import" type="button" class="backup-btn secondary">Pulihkan Backup</button>
+        <input id="import-file" type="file" accept="application/json" hidden />
+      </div>
+      <p class="backup-hint">Backup menyimpan semua tugas & riwayat dalam file JSON. Simpan file ini agar data tidak hilang.</p>
+    </div>
+  </main>
+  <script src="auth-guard.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
