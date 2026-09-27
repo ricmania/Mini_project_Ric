@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tododay — Riwayat To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card history-card">
+    <p class="host">tododay.rakit.icu</p>
+    <p id="live-clock" class="live-clock"></p>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">← Kembali ke To-Do List</a>
+    </nav>
+
+    <div class="user-bar">
+      <span>👤 <span id="user-name" class="user-name">Pengguna</span></span>
+      <button id="logout" type="button" class="logout-btn">Keluar</button>
+    </div>
+
+    <h1>🗂️ Riwayat Tugas</h1>
+
+    <ul id="history-list" class="list"></ul>
+
+    <p id="history-empty" class="empty">Belum ada riwayat. Tugas yang kamu selesaikan akan tersimpan di sini. ✨</p>
+
+    <footer class="footer">
+      <span id="history-count">0 tugas dalam riwayat</span>
+      <button id="clear-all" type="button" class="link">Hapus semua</button>
+    </footer>
+  </main>
+
+  <!-- Modal konfirmasi hapus (in-page popup) -->
+  <div id="confirm-modal" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message">
+      <div class="modal-icon">⚠️</div>
+      <h2 id="modal-title">Hapus riwayat?</h2>
+      <p id="modal-message"></p>
+      <div class="modal-actions">
+        <button id="modal-cancel" type="button" class="modal-btn cancel">Batal</button>
+        <button id="modal-ok" type="button" class="modal-btn danger">Ya, Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth-guard.js"></script>
+  <script src="history.js"></script>
+</body>
+</html>
